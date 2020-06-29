@@ -28,7 +28,7 @@
               />
             </fieldset>
             <button class="btn btn-lg btn-primary pull-xs-right">
-              Sign up
+              Sign in
             </button>
           </form>
         </div>
