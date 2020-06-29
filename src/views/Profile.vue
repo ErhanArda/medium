@@ -4,8 +4,11 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-md-10 offset-md-1">
-            <img src="http://i.imgur.com/Qr71crq.jpg" class="user-img" />
-            <h4>Eric Simons</h4>
+            <img
+              src="https://i.pinimg.com/736x/12/07/f7/1207f7d4ff451f54985ebac8d9861b23.jpg"
+              class="user-img"
+            />
+            <h4>Erhan Arda</h4>
             <p>
               Cofounder @GoThinkster, lived in Aol's HQ for a few months, kinda
               looks like Peeta from the Hunger Games

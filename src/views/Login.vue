@@ -9,12 +9,13 @@
           </p>
 
           <ul class="error-messages">
-            <li>That email is already taken</li>
+            <li v-for="(error, i) in errors" :key="i">{{ error.message }}</li>
           </ul>
 
           <form>
             <fieldset class="form-group">
               <input
+                v-model="email"
                 class="form-control form-control-lg"
                 type="text"
                 placeholder="Email"
@@ -25,9 +26,10 @@
                 class="form-control form-control-lg"
                 type="password"
                 placeholder="Password"
+                v-model="password"
               />
             </fieldset>
-            <button class="btn btn-lg btn-primary pull-xs-right">
+            <button @click="login" class="btn btn-lg btn-primary pull-xs-right">
               Sign in
             </button>
           </form>
@@ -36,3 +38,30 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data: function() {
+    return {
+      password: "",
+      email: "",
+      errors: []
+    };
+  },
+  methods: {
+    login() {
+      this.$store
+        .dispatch("users/loginUser", {
+          email: this.email,
+          password: this.password
+        })
+        .then(() => {
+          this.errors = [];
+        })
+        .catch(err => {
+          this.errors.push(err);
+        });
+    }
+  }
+};
+</script>
